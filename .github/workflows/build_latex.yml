@@ -19,7 +19,9 @@ jobs:
           path: main.pdf
       - name: Commit to gh-pages
         run: |
-          git checkout gh-pages
+          git remote update
+          git fetch 
+          git checkout --track gh-pages
           mv -f main.pdf docs/browningluke-latest.pdf
           git add docs/browningluke-latest.pdf
           git commit -m "${{ github.run_id }}"
