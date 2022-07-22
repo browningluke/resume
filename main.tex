@@ -1,0 +1,30 @@
+\documentclass[]{resume}
+
+\usepackage{makecell}
+\usepackage{geometry}
+\usepackage{etoolbox}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\newtoggle{coop}
+\toggletrue{coop}
+%\togglefalse{coop}
+
+\usepackage{tikz}
+
+\iftoggle{coop}{
+    \include{headers/coop/coopHeader}
+}{
+    \include{headers/name/nameHeader}
+}
+
+\begin{document}
+
+\iftoggle{coop}{
+    \input{headers/coop/coopInlineHeader}
+}{}
+
+\end{document}
