@@ -22,11 +22,6 @@
 }
 
 \begin{document}
-
-\iftoggle{coop}{
-    \input{headers/coop/coopInlineHeader}
-}{}
-
 \section*{Technical Skills}
 
 {\renewcommand{\arraystretch}{1.5}%
@@ -60,9 +55,7 @@
   \item Implemented a download system that asynchronously download images for each chapter.
 }
 
-\iftoggle{coop}{
-    \input{headers/coop/coopInlineHeader}
-}{}
+\pagebreak
 
 \project{Homelab (Bash/Docker)}{Jan 2020 –  Present}{
   \item	Deployed a Proxmox hypervisor on a dedicated machine and created an OPNSense VM, a dnsmasq LXC and a Ubuntu VM.
