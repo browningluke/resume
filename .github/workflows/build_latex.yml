@@ -21,7 +21,7 @@ jobs:
         run: |
           git remote update
           git fetch 
-          git checkout --track gh-pages
+          git checkout --track origin/gh-pages
           mv -f main.pdf docs/browningluke-latest.pdf
           git add docs/browningluke-latest.pdf
           git commit -m "${{ github.run_id }}"
