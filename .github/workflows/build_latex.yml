@@ -13,3 +13,7 @@ jobs:
           latexmk_use_xelatex: true
           extra_fonts: |
             ./fonts/calibri.ttf
+      - uses: actions/upload-artifact@v2
+        with:
+          name: PDF
+          path: main.pdf
