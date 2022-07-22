@@ -6,6 +6,7 @@ jobs:
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v2
+      
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
@@ -13,10 +14,12 @@ jobs:
           latexmk_use_xelatex: true
           extra_fonts: |
             ./fonts/calibri.ttf
+      
       - uses: actions/upload-artifact@v2
         with:
           name: PDF
           path: main.pdf
+      
       - name: Commit to gh-pages
         run: |
           git remote update
@@ -24,8 +27,8 @@ jobs:
           git checkout --track origin/gh-pages
           mv -f main.pdf docs/browningluke-latest.pdf
 
-          git config --global user.email "${{github.event.pusher.name}}"
-          git config --global user.name "${{github.event.pusher.email}}"
+          git config --global user.email "${{github.event.pusher.email}}"
+          git config --global user.name "${{github.event.pusher.name}}"
 
           git add docs/browningluke-latest.pdf
           git commit -m "${{ github.run_id }}"
