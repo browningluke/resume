@@ -23,6 +23,10 @@ jobs:
           git fetch 
           git checkout --track origin/gh-pages
           mv -f main.pdf docs/browningluke-latest.pdf
+
+          git config --global user.email "${{github.event.pusher.name}}"
+          git config --global user.name "${{github.event.pusher.email}}"
+
           git add docs/browningluke-latest.pdf
           git commit -m "${{ github.run_id }}"
           git push
