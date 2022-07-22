@@ -17,3 +17,10 @@ jobs:
         with:
           name: PDF
           path: main.pdf
+      - name: Commit to gh-pages
+        run: |
+          git checkout gh-pages
+          mv -f main.pdf docs/browningluke-latest.pdf
+          git add docs/browningluke-latest.pdf
+          git commit -m "${{ github.run_id }}"
+          git push
