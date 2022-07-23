@@ -24,7 +24,6 @@ jobs:
           latexmk_use_xelatex: true
           extra_fonts: |
             ./fonts/*/*.ttf
-            ./fonts/*.ttf
       
       - uses: actions/upload-artifact@v2
         with:
