@@ -3,7 +3,7 @@
 \LoadClass{article}
 
 \usepackage{fontspec}
-\setmainfont{Calibri}
+\setmainfont{Carlito}
 
 
 \newcommand{\experience}[5]{
