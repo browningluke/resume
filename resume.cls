@@ -5,6 +5,13 @@
 \usepackage{fontspec}
 \setmainfont{Carlito}
 
+\usepackage{fontawesome}
+\newcommand{\seticon}[1]{{\csname #1\endcsname}}
+
+\usepackage[hidelinks]{hyperref}
+\newcommand{\hrefemail}[1]{\href{mailto:#1}{#1}}
+\newcommand{\hrefurl}[1]{\href{https://#1}{#1}}
+\newcommand{\hreftel}[1]{\href{tel:#1}{#1}}
 
 \newcommand{\experience}[5]{
 \quad \textbf{#1} - #2 - \textit{#3}
