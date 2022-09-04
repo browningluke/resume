@@ -7,6 +7,9 @@ on:
       - main
       - 'release/**'
       - 'ft/**'
+  pull_request:
+    branches:
+      - main
 
 permissions:
   contents: write
@@ -29,6 +32,15 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: PDF
+          path: main.pdf
+
+      # Only run if action was triggered by PR
+      - name: Comment PDF on PR
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: machine-learning-apps/pr-comment@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
           path: main.pdf
       
       # Only run the following if a tag was created
