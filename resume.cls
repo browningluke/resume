@@ -13,6 +13,8 @@
 \newcommand{\hrefurl}[1]{\href{https://#1}{#1}}
 \newcommand{\hreftel}[1]{\href{tel:#1}{#1}}
 
+\newcommand{\github}[2]{\href{https://github.com/#1}{\seticon{faGithub} #2}}
+
 \newcommand{\experience}[5]{
 \quad \textbf{#1} - #2 - \textit{#3}
 \hfill
